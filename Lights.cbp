@@ -33,7 +33,6 @@
 			<Add option="-Wall" />
 			<Add directory="../../lib/libRocket/Include" />
 			<Add directory="../../lib/SFML/include" />
-			<Add directory="../../lib/artemis-port2cpp/src" />
 			<Add directory="../../lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source" />
 			<Add directory="/usr/include" />
 			<Add directory="src" />
