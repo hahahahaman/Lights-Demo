@@ -1,0 +1,76 @@
+<rml>
+	<head>
+		<title>E.L.E</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				position: absolute;
+				top: 80px;
+				left: 80%;
+				
+				width: 300px;
+				height: 50%;
+				font-size: 16;
+				
+				margin: auto;
+			}
+			
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+			}
+			
+			form div
+			{
+				width: 230px;
+				margin: auto;
+			}
+			
+			input.text
+			{
+				width: 50%;
+				margin-right: 1em;
+				margin-left: 0px;
+				maxlength: 1;
+			}
+			
+			span
+			{
+				margin-right: 1em;
+			}
+			
+		</style>
+	</head>
+	<body template="window" id="emissive_light_editor">
+		<form>
+			<p>
+				Center: <span/> x: <span id="out_center_x"/>  y:<span id="out_center_y"/>
+				<br/>
+				
+				Dimensions: 
+				<br />
+				width: <input id = "in_dim_width" type="text"/> <span id ="out_dim_width"/>
+				<br/>
+				height: <input id = "in_dim_height" type="text"/> <span id="out_dim_height"/>
+				<br/>
+			
+				Color: 
+				<br />
+				r: <input id = "in_color_r" type="text"/> <span id ="out_color_r"/>
+				<br/>
+				g: <input id = "in_color_g" type="text"/> <span id="out_color_g"/>
+				<br/>
+				b: <input id = "in_color_b" type="text"/> <span id="out_color_b"/>
+				<br/>	
+				
+				Rotation: 
+				<br />
+				<input id = "in_rotation" type="text"/> <span id="out_rotation"/>
+				<br/>
+			</p>
+			<button type="submit" onclick="SetEmissiveLight"> Set! </button>
+		</form>
+	</body>
+</rml>

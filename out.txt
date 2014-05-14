@@ -1,0 +1,21 @@
+Status: Using GLEW 1.10.0
+[Info] - Loaded font face Delicious Bold (from fonts/Delicious-Bold.otf).
+[Info] - Loaded font face Delicious Bold Italic (from fonts/Delicious-BoldItalic.otf).
+[Info] - Loaded font face Delicious Italic (from fonts/Delicious-Italic.otf).
+[Info] - Loaded font face Delicious Roman (from fonts/Delicious-Roman.otf).
+[Info] - Loaded font face Lacuna Regular Regular (from byte stream).
+[Info] - Loaded font face Lacuna Italic Regular (from byte stream).
+[Info] - INITIALIZING
+Status: Using GLEW 1.10.0
+[Info] - Loaded font face Delicious Bold (from fonts/Delicious-Bold.otf).
+[Info] - Loaded font face Delicious Bold Italic (from fonts/Delicious-BoldItalic.otf).
+[Info] - Loaded font face Delicious Italic (from fonts/Delicious-Italic.otf).
+[Info] - Loaded font face Delicious Roman (from fonts/Delicious-Roman.otf).
+[Info] - Loaded font face Lacuna Regular Regular (from byte stream).
+[Info] - Loaded font face Lacuna Italic Regular (from byte stream).
+[Info] - INITIALIZING
+PN3qdt16QuadTreeOccupantE
+PN3qdt16QuadTreeOccupantE
+PN3qdt16QuadTreeOccupantE
+PN3qdt16QuadTreeOccupantE
+PN3qdt16QuadTreeOccupantE

@@ -1,0 +1,106 @@
+<rml>
+	<head>
+		<title>L.P.E</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				position: relative;
+				top: 80px;
+				left: 30px;
+				
+				width: 230px;
+				height: 80%;
+				font-size: 16;
+				
+				margin: auto;
+			}
+			
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+			}
+			
+			datagrid
+			{
+				margin-bottom: 20px;
+			}
+			
+			form div
+			{
+				width: 300px;
+				margin: auto;
+			}
+			
+			input.text
+			{
+				width: 50%;
+				margin-right: 1em;
+				margin-left: 0px;
+				maxlength: 1;
+			}
+			
+			span
+			{
+				margin-right: 1em;
+			}
+			
+					
+		</style>
+	</head>
+	<body template="window" id="light_point_editor">
+		<form onsubmit="set"/>
+		<div>
+			<p>
+				Center: <span/> x: <span id="out_center_x"/>  y:<span id="out_center_y"/>
+				<br/>
+				
+				Radius: 
+				<br />
+				<input id = "in_radius" type="text"/> <span id="out_radius"/>
+				<br/>
+				
+				Color: 
+				<br />
+				r: <input id = "in_color_r" type="text"/> <span id ="out_color_r"/>
+				<br/>
+				g: <input id = "in_color_g" type="text"/> <span id="out_color_g"/>
+				<br/>
+				b: <input id = "in_color_b" type="text"/> <span id="out_color_b"/>
+				<br/>
+				
+				Size: 
+				<br />
+				<input id = "in_size" type="text"/> <span id ="out_size"/>
+				<br/>
+				
+				Spread Angle: 
+				<br />
+				<input id = "in_spread_angle" type="text"/> <span id ="out_spread_angle"/>
+				<br/>
+				
+				Soft Spread Angle: 
+				<br />
+				<input id = "in_soft_spread_angle" type="text"/> <span id="out_soft_spread_angle"/>
+				<br/>
+				
+				Direction Angle: 
+				<br />
+				<input id = "in_direction_angle" type="text"/> <span id="out_direction_angle"/>
+				<br/>
+				
+				Bleed: 
+				<br />
+				<input id = "in_bleed" type="text"/> < span id="out_bleed"/>
+				<br/>
+				
+				Linearize Factor: 
+				<br/>
+				<input id = "in_linearize_factor" type="text"/> <span id ="out_linearize_factor"/>
+				<br/>
+			</p>
+			<button type="submit" onclick="SetLight"> Set! </button>
+		</div>
+	</body>
+</rml>

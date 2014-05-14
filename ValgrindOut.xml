@@ -1,0 +1,959 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>4</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: /home/docs/stuff/code/projects/Lights/./Lights_d  ../.đ</line>
+</preamble>
+
+<pid>12199</pid>
+<ppid>6269</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/usr/bin/valgrind</exe>
+    <arg>--leak-check=full</arg>
+    <arg>--track-origins=yes</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=/home/docs/stuff/code/projects/Lights/ValgrindOut.xml</arg>
+  </vargv>
+  <argv>
+    <exe>/home/docs/stuff/code/projects/Lights/./Lights_d</exe>
+    <arg></arg>
+    <arg>../.đ</arg>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.068 </time>
+</status>
+
+<error>
+  <unique>0x4</unique>
+  <tid>1</tid>
+  <kind>InvalidFree</kind>
+  <what>Invalid free() / delete / delete[] / realloc()</what>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4103D9</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>ConvexHull.h</file>
+      <line>15</line>
+    </frame>
+    <frame>
+      <ip>0x416534</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::clearConvexHulls()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>458</line>
+    </frame>
+    <frame>
+      <ip>0x4141AF</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::~LightSystem()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>38</line>
+    </frame>
+    <frame>
+      <ip>0x434649</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::default_delete&lt;ltbl::LightSystem&gt;::operator()(ltbl::LightSystem*) const</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>67</line>
+    </frame>
+    <frame>
+      <ip>0x433D12</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::unique_ptr&lt;ltbl::LightSystem, std::default_delete&lt;ltbl::LightSystem&gt; &gt;::~unique_ptr()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>184</line>
+    </frame>
+    <frame>
+      <ip>0x43051D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x42A22A</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x42A291</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x43A713</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Rocket::Core::ElementInstancerGeneric&lt;ElementGame&gt;::ReleaseElement(Rocket::Core::Element*)</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/libRocket/Include/Rocket/Core</dir>
+      <file>ElementInstancerGeneric.inl</file>
+      <line>46</line>
+    </frame>
+    <frame>
+      <ip>0x5F30257</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::OnReferenceDeactivate()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F2CA88</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::ReleaseElements(std::vector&lt;Rocket::Core::Element*, std::allocator&lt;Rocket::Core::Element*&gt; &gt;&amp;)</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0xe7930b8 is 8 bytes inside a block of size 824 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x4C27B19</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+    </frame>
+    <frame>
+      <ip>0x42A11B</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::ElementGame(Rocket::Core::StringBase&lt;char&gt; const&amp;)</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>13</line>
+    </frame>
+    <frame>
+      <ip>0x43A6C0</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Rocket::Core::ElementInstancerGeneric&lt;ElementGame&gt;::InstanceElement(Rocket::Core::Element*, Rocket::Core::StringBase&lt;char&gt; const&amp;, Rocket::Core::Dictionary const&amp;)</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/libRocket/Include/Rocket/Core</dir>
+      <file>ElementInstancerGeneric.inl</file>
+      <line>37</line>
+    </frame>
+    <frame>
+      <ip>0x5FA0DC4</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Factory::InstanceElement(Rocket::Core::Element*, Rocket::Core::StringBase&lt;char&gt; const&amp;, Rocket::Core::StringBase&lt;char&gt; const&amp;, Rocket::Core::Dictionary const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F8E776</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::XMLNodeHandlerDefault::ElementStart(Rocket::Core::XMLParser*, Rocket::Core::StringBase&lt;char&gt; const&amp;, Rocket::Core::Dictionary const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F91AFC</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::XMLParser::HandleElementStart(Rocket::Core::StringBase&lt;char&gt; const&amp;, Rocket::Core::Dictionary const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F02DFC</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::BaseXMLParser::ReadOpenTag()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F031AC</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::BaseXMLParser::ReadBody()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F0322F</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::BaseXMLParser::Parse(Rocket::Core::Stream*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5FA466C</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Factory::InstanceDocumentStream(Rocket::Core::Context*, Rocket::Core::Stream*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F183A4</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Context::LoadDocument(Rocket::Core::Stream*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F18478</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Context::LoadDocument(Rocket::Core::StringBase&lt;char&gt; const&amp;)</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x5</unique>
+  <tid>1</tid>
+  <kind>InvalidFree</kind>
+  <what>Invalid free() / delete / delete[] / realloc()</what>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x40FF2F</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>__gnu_cxx::new_allocator&lt;sf::Vector2&lt;float&gt; &gt;::deallocate(sf::Vector2&lt;float&gt;*, unsigned long)</fn>
+      <dir>/usr/include/c++/4.8.1/ext</dir>
+      <file>new_allocator.h</file>
+      <line>110</line>
+    </frame>
+    <frame>
+      <ip>0x40FCCD</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::_Vector_base&lt;sf::Vector2&lt;float&gt;, std::allocator&lt;sf::Vector2&lt;float&gt; &gt; &gt;::_M_deallocate(sf::Vector2&lt;float&gt;*, unsigned long)</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>stl_vector.h</file>
+      <line>174</line>
+    </frame>
+    <frame>
+      <ip>0x40F89C</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::_Vector_base&lt;sf::Vector2&lt;float&gt;, std::allocator&lt;sf::Vector2&lt;float&gt; &gt; &gt;::~_Vector_base()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>stl_vector.h</file>
+      <line>160</line>
+    </frame>
+    <frame>
+      <ip>0x40F71C</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::vector&lt;sf::Vector2&lt;float&gt;, std::allocator&lt;sf::Vector2&lt;float&gt; &gt; &gt;::~vector()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>stl_vector.h</file>
+      <line>416</line>
+    </frame>
+    <frame>
+      <ip>0x410388</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+    </frame>
+    <frame>
+      <ip>0x43052D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x42A22A</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x42A291</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x43A713</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Rocket::Core::ElementInstancerGeneric&lt;ElementGame&gt;::ReleaseElement(Rocket::Core::Element*)</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/libRocket/Include/Rocket/Core</dir>
+      <file>ElementInstancerGeneric.inl</file>
+      <line>46</line>
+    </frame>
+    <frame>
+      <ip>0x5F30257</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::OnReferenceDeactivate()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F2CA88</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::ReleaseElements(std::vector&lt;Rocket::Core::Element*, std::allocator&lt;Rocket::Core::Element*&gt; &gt;&amp;)</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0xf5480e0 is 0 bytes inside a block of size 128 free'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x40FF2F</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>__gnu_cxx::new_allocator&lt;sf::Vector2&lt;float&gt; &gt;::deallocate(sf::Vector2&lt;float&gt;*, unsigned long)</fn>
+      <dir>/usr/include/c++/4.8.1/ext</dir>
+      <file>new_allocator.h</file>
+      <line>110</line>
+    </frame>
+    <frame>
+      <ip>0x40FCCD</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::_Vector_base&lt;sf::Vector2&lt;float&gt;, std::allocator&lt;sf::Vector2&lt;float&gt; &gt; &gt;::_M_deallocate(sf::Vector2&lt;float&gt;*, unsigned long)</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>stl_vector.h</file>
+      <line>174</line>
+    </frame>
+    <frame>
+      <ip>0x40F89C</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::_Vector_base&lt;sf::Vector2&lt;float&gt;, std::allocator&lt;sf::Vector2&lt;float&gt; &gt; &gt;::~_Vector_base()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>stl_vector.h</file>
+      <line>160</line>
+    </frame>
+    <frame>
+      <ip>0x40F71C</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::vector&lt;sf::Vector2&lt;float&gt;, std::allocator&lt;sf::Vector2&lt;float&gt; &gt; &gt;::~vector()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>stl_vector.h</file>
+      <line>416</line>
+    </frame>
+    <frame>
+      <ip>0x410388</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+    </frame>
+    <frame>
+      <ip>0x4103CD</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>ConvexHull.h</file>
+      <line>15</line>
+    </frame>
+    <frame>
+      <ip>0x416534</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::clearConvexHulls()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>458</line>
+    </frame>
+    <frame>
+      <ip>0x4141AF</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::~LightSystem()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>38</line>
+    </frame>
+    <frame>
+      <ip>0x434649</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::default_delete&lt;ltbl::LightSystem&gt;::operator()(ltbl::LightSystem*) const</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>67</line>
+    </frame>
+    <frame>
+      <ip>0x433D12</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::unique_ptr&lt;ltbl::LightSystem, std::default_delete&lt;ltbl::LightSystem&gt; &gt;::~unique_ptr()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>184</line>
+    </frame>
+    <frame>
+      <ip>0x43051D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x7</unique>
+  <tid>1</tid>
+  <kind>InvalidFree</kind>
+  <what>Invalid free() / delete / delete[] / realloc()</what>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5076E00</ip>
+      <obj>/usr/local/lib/libsfml-graphics.so.2.1</obj>
+      <fn>sf::Shape::~Shape()</fn>
+    </frame>
+    <frame>
+      <ip>0x40F68E</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>sf::ConvexShape::~ConvexShape()</fn>
+    </frame>
+    <frame>
+      <ip>0x410394</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+    </frame>
+    <frame>
+      <ip>0x43052D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x42A22A</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x42A291</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x43A713</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Rocket::Core::ElementInstancerGeneric&lt;ElementGame&gt;::ReleaseElement(Rocket::Core::Element*)</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/libRocket/Include/Rocket/Core</dir>
+      <file>ElementInstancerGeneric.inl</file>
+      <line>46</line>
+    </frame>
+    <frame>
+      <ip>0x5F30257</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::OnReferenceDeactivate()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F2CA88</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::ReleaseElements(std::vector&lt;Rocket::Core::Element*, std::allocator&lt;Rocket::Core::Element*&gt; &gt;&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F3076E</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::~Element()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F54A48</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::ElementDocument::~ElementDocument()</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0xf84f2d0 is 0 bytes inside a block of size 720 free'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5076E00</ip>
+      <obj>/usr/local/lib/libsfml-graphics.so.2.1</obj>
+      <fn>sf::Shape::~Shape()</fn>
+    </frame>
+    <frame>
+      <ip>0x40F68E</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>sf::ConvexShape::~ConvexShape()</fn>
+    </frame>
+    <frame>
+      <ip>0x410394</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+    </frame>
+    <frame>
+      <ip>0x4103CD</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>ConvexHull.h</file>
+      <line>15</line>
+    </frame>
+    <frame>
+      <ip>0x416534</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::clearConvexHulls()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>458</line>
+    </frame>
+    <frame>
+      <ip>0x4141AF</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::~LightSystem()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>38</line>
+    </frame>
+    <frame>
+      <ip>0x434649</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::default_delete&lt;ltbl::LightSystem&gt;::operator()(ltbl::LightSystem*) const</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>67</line>
+    </frame>
+    <frame>
+      <ip>0x433D12</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::unique_ptr&lt;ltbl::LightSystem, std::default_delete&lt;ltbl::LightSystem&gt; &gt;::~unique_ptr()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>184</line>
+    </frame>
+    <frame>
+      <ip>0x43051D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x42A22A</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x42A291</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>20</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x8</unique>
+  <tid>1</tid>
+  <kind>InvalidFree</kind>
+  <what>Invalid free() / delete / delete[] / realloc()</what>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5076E2F</ip>
+      <obj>/usr/local/lib/libsfml-graphics.so.2.1</obj>
+      <fn>sf::Shape::~Shape()</fn>
+    </frame>
+    <frame>
+      <ip>0x40F68E</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>sf::ConvexShape::~ConvexShape()</fn>
+    </frame>
+    <frame>
+      <ip>0x410394</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+    </frame>
+    <frame>
+      <ip>0x43052D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x42A22A</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x42A291</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>20</line>
+    </frame>
+    <frame>
+      <ip>0x43A713</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Rocket::Core::ElementInstancerGeneric&lt;ElementGame&gt;::ReleaseElement(Rocket::Core::Element*)</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/libRocket/Include/Rocket/Core</dir>
+      <file>ElementInstancerGeneric.inl</file>
+      <line>46</line>
+    </frame>
+    <frame>
+      <ip>0x5F30257</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::OnReferenceDeactivate()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F2CA88</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::ReleaseElements(std::vector&lt;Rocket::Core::Element*, std::allocator&lt;Rocket::Core::Element*&gt; &gt;&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x5F3076E</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::Element::~Element()</fn>
+    </frame>
+    <frame>
+      <ip>0x5F54A48</ip>
+      <obj>/usr/local/lib64/libRocketCore.so.1.2.1</obj>
+      <fn>Rocket::Core::ElementDocument::~ElementDocument()</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0xf547c70 is 0 bytes inside a block of size 400 free'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x4C28D7C</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator delete(void*)</fn>
+    </frame>
+    <frame>
+      <ip>0x5076E2F</ip>
+      <obj>/usr/local/lib/libsfml-graphics.so.2.1</obj>
+      <fn>sf::Shape::~Shape()</fn>
+    </frame>
+    <frame>
+      <ip>0x40F68E</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>sf::ConvexShape::~ConvexShape()</fn>
+    </frame>
+    <frame>
+      <ip>0x410394</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+    </frame>
+    <frame>
+      <ip>0x4103CD</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::ConvexHull::~ConvexHull()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/../../lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>ConvexHull.h</file>
+      <line>15</line>
+    </frame>
+    <frame>
+      <ip>0x416534</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::clearConvexHulls()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>458</line>
+    </frame>
+    <frame>
+      <ip>0x4141AF</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ltbl::LightSystem::~LightSystem()</fn>
+      <dir>/home/docs/stuff/code/lib/Let_There_Be_Light_v1.5.1/Let_There_Be_Light_v1.5/Source/LTBL/Light</dir>
+      <file>LightSystem.cpp</file>
+      <line>38</line>
+    </frame>
+    <frame>
+      <ip>0x434649</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::default_delete&lt;ltbl::LightSystem&gt;::operator()(ltbl::LightSystem*) const</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>67</line>
+    </frame>
+    <frame>
+      <ip>0x433D12</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>std::unique_ptr&lt;ltbl::LightSystem, std::default_delete&lt;ltbl::LightSystem&gt; &gt;::~unique_ptr()</fn>
+      <dir>/usr/include/c++/4.8.1/bits</dir>
+      <file>unique_ptr.h</file>
+      <line>184</line>
+    </frame>
+    <frame>
+      <ip>0x43051D</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>Game::~Game()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>Game.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x42A22A</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>19</line>
+    </frame>
+    <frame>
+      <ip>0x42A291</ip>
+      <obj>/home/docs/stuff/code/projects/Lights/Lights_d</obj>
+      <fn>ElementGame::~ElementGame()</fn>
+      <dir>/home/docs/stuff/code/projects/Lights/src/libRocket</dir>
+      <file>ElementGame.cpp</file>
+      <line>20</line>
+    </frame>
+  </stack>
+</error>
+
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:38.580 </time>
+</status>
+
+<error>
+  <unique>0x43</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>128 bytes in 1 blocks are definitely lost in loss record 59 of 90</text>
+    <leakedbytes>128</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29734</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xAE4F752</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+      <fn>driParseOptionInfo</fn>
+    </frame>
+    <frame>
+      <ip>0xB16B293</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+      <fn>dri_init_screen_helper</fn>
+    </frame>
+    <frame>
+      <ip>0xB16C27D</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xAE4D620</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x59D9B79</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B6628</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B4198</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B44CD</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+      <fn>glXCreateContext</fn>
+    </frame>
+    <frame>
+      <ip>0x4E3C19C</ip>
+      <obj>/usr/local/lib/libsfml-window.so.2.1</obj>
+      <fn>sf::priv::GlxContext::createContext(sf::priv::GlxContext*, unsigned int, sf::ContextSettings const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E3C2C7</ip>
+      <obj>/usr/local/lib/libsfml-window.so.2.1</obj>
+      <fn>sf::priv::GlxContext::GlxContext(sf::priv::GlxContext*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E3876C</ip>
+      <obj>/usr/local/lib/libsfml-window.so.2.1</obj>
+      <fn>sf::priv::GlContext::globalInit()</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x56</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>1,024 bytes in 1 blocks are definitely lost in loss record 78 of 90</text>
+    <leakedbytes>1024</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29734</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xB131CFB</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB134E80</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB10C933</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB10DBE4</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xAE4C835</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB16C241</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xAE4D620</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x59D9B79</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B6628</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B4198</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B44CD</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+      <fn>glXCreateContext</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x61</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>6,144 bytes in 6 blocks are definitely lost in loss record 89 of 90</text>
+    <leakedbytes>6144</leakedbytes>
+    <leakedblocks>6</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C29734</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>calloc</fn>
+    </frame>
+    <frame>
+      <ip>0xB131CFB</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB134E80</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB10C933</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xAF71651</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xB16AA46</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+      <fn>dri_create_context</fn>
+    </frame>
+    <frame>
+      <ip>0xAE4D2AF</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0xAE4D454</ip>
+      <obj>/usr/lib/xorg/modules/dri/r600_dri.so</obj>
+    </frame>
+    <frame>
+      <ip>0x59D9906</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B4232</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+    </frame>
+    <frame>
+      <ip>0x59B4514</ip>
+      <obj>/usr/lib/mesa-libGL.so.1.2.0</obj>
+      <fn>glXCreateContext</fn>
+    </frame>
+    <frame>
+      <ip>0x4E3C19C</ip>
+      <obj>/usr/local/lib/libsfml-window.so.2.1</obj>
+      <fn>sf::priv::GlxContext::createContext(sf::priv::GlxContext*, unsigned int, sf::ContextSettings const&amp;)</fn>
+    </frame>
+  </stack>
+</error>
+
+<errorcounts>
+  <pair>
+    <count>1</count>
+    <unique>0x8</unique>
+  </pair>
+  <pair>
+    <count>1</count>
+    <unique>0x7</unique>
+  </pair>
+  <pair>
+    <count>2</count>
+    <unique>0x5</unique>
+  </pair>
+  <pair>
+    <count>1</count>
+    <unique>0x4</unique>
+  </pair>
+</errorcounts>
+
+<suppcounts>
+  <pair>
+    <count>2</count>
+    <name>X on SUSE11 writev uninit padding</name>
+  </pair>
+  <pair>
+    <count>2</count>
+    <name>dl-hack3-cond-1</name>
+  </pair>
+</suppcounts>
+
+</valgrindoutput>
+

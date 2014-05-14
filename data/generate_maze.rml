@@ -1,0 +1,48 @@
+<rml>
+	<head>
+		<title>Generate Maze</title>
+		<link type="text/template" href="window.rml" />
+		<style>
+			body
+			{
+				width: 350px;
+				height: 300px;
+				
+				margin: auto;
+			}
+			
+			div#title_bar div#icon
+			{
+				icon-image-s: 230px 281px;
+				icon-image-t: 152px 191px;
+			}
+			
+			form div
+			{
+				width: 200px;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body template="window">
+		<form onsubmit = "generate">
+			<div>
+				<p>
+					Width: <br />
+					<input id = "input_width" type="text" value = ""/>
+					Height <br />
+					<input id = "input_height" type ="text" value = ""/>
+				</p>
+				<p>
+					Algorithm:<br />
+					<select id ="select_algorithm">
+						<option selected value= "0">Depth First</option>
+						<option value= "1">Breadth First</option>
+						<!-- <option value= "2">Prim's</option> -->
+					</select>
+				</p>
+			</div>
+			<button type="submit" onclick = "generate" >Generate!</button>
+		</form>
+	</body>
+</rml>
